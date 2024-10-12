@@ -737,6 +737,9 @@ body{
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  /* word-wrap: break-word; */
+  
   /* align-items: flex-start; */
   position: relative;
   
@@ -759,6 +762,7 @@ body{
 .timeline-item{
   margin-bottom: 40px;
   width: 100%;
+  
   position: relative;
 }
 .timeline-item:last-child{
@@ -803,6 +807,7 @@ body{
   background-color: var(--bg-black);
   border: 3px solid white;
   padding: 30px 50px;
+  /* overflow-wrap: break-word; */
   border-radius: 4rem;
   box-shadow: 0 0 10px white;
   margin: 20px;
@@ -1733,3 +1738,13 @@ textarea.input-field {
   
 } 
 
+@media(max-width: 550px){
+  .timeline-content{
+    font-size: 10px;
+    /* text-align: center; */
+    overflow-wrap: break-word;
+    /* word-break: break-all; */
+    padding: 10px;
+  }
+  
+}
