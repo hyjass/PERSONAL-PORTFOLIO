@@ -1,832 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 
     - primary meta tags
   -->
-    <title>Jaskaran Singh - Web Developer</title>
-    <meta name="title" content="Jaskaran Singh" />
-    <meta name="description" content="This is a personal portfolio" />
+  <title>Jaskaran Singh - Web Developer</title>
+  <meta name="title" content="Jaskaran Singh" />
+  <meta name="description" content="This is a personal portfolio" />
 
-    <!-- 
+  <!-- 
     - favicon
   -->
-    <link rel="shortcut icon" href="" type="image/svg+xml" />
+  <link rel="shortcut icon" href="" type="image/svg+xml" />
 
-    <!-- 
+  <!-- 
     - google font link
   -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/font/font.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/font/font.css" />
 
-    <!-- 
+  <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- 
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- 
     - preload images
   -->
-    <link rel="preload" as="image" href="./assets/images/hero-banner.jpg" />
-    <link rel="preload" as="image" href="./assets/images/hero-shape-1.png" />
-    <link rel="preload" as="image" href="./assets/images/hero-shape-2.png" />
-  </head>
+  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg" />
+  <link rel="preload" as="image" href="./assets/images/hero-shape-1.png" />
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png" />
+</head>
 
-  <body id="top">
-    <!-- 
+<body id="top">
+  <!-- 
     - #PRELOADER
   -->
 
-    <div class="preloader" data-preloader>
-      <span class="line"></span>
-    </div>
+  <div class="preloader" data-preloader>
+    <span class="line"></span>
+  </div>
 
-    <!-- 
+  <!-- 
     - #HEADER
   -->
 
-    <header class="header" data-header>
-      <div class="container">
-        <a href="https://github.com/hyjass"
-          ><img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAzRJREFUaEPtmVFumjEMx+PQ0QOMp7FqRdoKZxg7w7gDuwOH4A7jDvQM4w583SQ6deyJvQ8GyeQPpfrI5zgOhEqVykulkjg/O387TgD1DD/wDJnVC7TbteJ30VLrZktdblb4v+6bbvk31ydLpH8sf/aNMX2loGXAtig4bdXcaFUAbGanOnE09B7UDkKQXFTRAa31bAd/i2McSIYuFoseXKjPBlTv1O1GeLtVt91OZ55iKwn6+/J+uLP2U8oCorGgpimyEUPfPSxGOaIbcqKMemMzkchFBH1uYOeItrCyjfU4Bh6FfirgFHAWer5cDJRVg+qWYjSMtjNtVJcrcTEtNwC+7ZT9g3ZqsgM17bU705CNIDQeENY0x7WJFYNYSXQTPlLJiRqlnPK1i6Vza80Xf50L0F/ft9/NKPAgdEgW8E+N/RKF8I2mfo11lzoB8Xu3eG1uIDicvkloXMS+UiPSSwI6JgXu++CO4qSATEhoLvmoSJ8LGqN9c3VdC14NmvVcKcVp7Rj4kKadLdCbkV8Ca9BUxaiWI8rzY2Crc+4e7sfBHoaQSA2ak0buKDtwbnex2txcdQ6qGAEd9rr3tjM8Naqh+Vy0/XXr8vi1mND9MJ0UuZxgk9/T9QE0t014gn1oX5MO5QDnOkg/GcXQlLZywDobLLR3NiTIo54QOaGPlgdCzAOaLg8oombmAufWjSYil8W5T0NJycMxUWhOW+dKxtQDrabp2LGa+4DhmrNyJyQnYqz3KO1k6vSiwIE8EnV5VEOPUjGwvo3d50KJKrnZi7s8XMSXiKsa1EKPL0cbVXDvF+6WY43qiR94UvppBPeriJNEMGki9zou2VLbBvaOCLvLUTUqXMQlNZyrxT44lzdpt3HiUrtPcChCl1Bx31wZGCut0XcPX8eSiIbbz/grlaTHiUL7+i5vyVs7SX003NvhoUPVoiYdae/gR3xfBrEfgZU1tuXfLii7HLQkws6mKNJuMFYAbaDvlyxphELQMQ0fHenH5qZ8n4ZhFVwOfXiVe5L36arH1cd1OfRe0+6XAEnFoWSWJA/KAPYqKUd56vizQEsTOee4kyOdE0Zq6wVaGqlTx/0H0lBfTARZp3IAAAAASUVORK5CYII="
-        /></a>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="https://github.com/hyjass"><img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAzRJREFUaEPtmVFumjEMx+PQ0QOMp7FqRdoKZxg7w7gDuwOH4A7jDvQM4w583SQ6deyJvQ8GyeQPpfrI5zgOhEqVykulkjg/O387TgD1DD/wDJnVC7TbteJ30VLrZktdblb4v+6bbvk31ydLpH8sf/aNMX2loGXAtig4bdXcaFUAbGanOnE09B7UDkKQXFTRAa31bAd/i2McSIYuFoseXKjPBlTv1O1GeLtVt91OZ55iKwn6+/J+uLP2U8oCorGgpimyEUPfPSxGOaIbcqKMemMzkchFBH1uYOeItrCyjfU4Bh6FfirgFHAWer5cDJRVg+qWYjSMtjNtVJcrcTEtNwC+7ZT9g3ZqsgM17bU705CNIDQeENY0x7WJFYNYSXQTPlLJiRqlnPK1i6Vza80Xf50L0F/ft9/NKPAgdEgW8E+N/RKF8I2mfo11lzoB8Xu3eG1uIDicvkloXMS+UiPSSwI6JgXu++CO4qSATEhoLvmoSJ8LGqN9c3VdC14NmvVcKcVp7Rj4kKadLdCbkV8Ca9BUxaiWI8rzY2Crc+4e7sfBHoaQSA2ak0buKDtwbnex2txcdQ6qGAEd9rr3tjM8Naqh+Vy0/XXr8vi1mND9MJ0UuZxgk9/T9QE0t014gn1oX5MO5QDnOkg/GcXQlLZywDobLLR3NiTIo54QOaGPlgdCzAOaLg8oombmAufWjSYil8W5T0NJycMxUWhOW+dKxtQDrabp2LGa+4DhmrNyJyQnYqz3KO1k6vSiwIE8EnV5VEOPUjGwvo3d50KJKrnZi7s8XMSXiKsa1EKPL0cbVXDvF+6WY43qiR94UvppBPeriJNEMGki9zou2VLbBvaOCLvLUTUqXMQlNZyrxT44lzdpt3HiUrtPcChCl1Bx31wZGCut0XcPX8eSiIbbz/grlaTHiUL7+i5vyVs7SX003NvhoUPVoiYdae/gR3xfBrEfgZU1tuXfLii7HLQkws6mKNJuMFYAbaDvlyxphELQMQ0fHenH5qZ8n4ZhFVwOfXiVe5L36arH1cd1OfRe0+6XAEnFoWSWJA/KAPYqKUd56vizQEsTOee4kyOdE0Zq6wVaGqlTx/0H0lBfTARZp3IAAAAASUVORK5CYII=" /></a>
 
-        <a
-          href="https://www.linkedin.com/in/jaskaran-singh-138503318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-          ><img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAnJJREFUaEPtmM9rE0EUx9+btKseFMHgoenaTqyZFAJFBS8VvfoXeFTIyYNHiRcvXnPzIijYs9deexR7kCLiRXdTySbmhwr1IIhI4s6TCUa3ZWbLSrK7DbvH3Xk7H77zfW/eDMIRfPAIMkMGHdeqzZ7Sbre5RpJdBkanAKh/zMIX/Cz/HJeipnmMSjvd5k0AvLEvkIBI+o9Xl1ZeJwmuhd7tty75ku7qwJDo+/Dbj3uVSmWQFLgW2ul6dwDgigmKETwp2fxVuqB73n0gECYoYvR8daG4lSro913vNgJcNycCPRKLxbepgm58aRflUD7QehqhLQr8YVLAal5j9Xj3sXmNIdwCRDYGRIQOyLmnwrZ7qYRWUG887/SJebwIUp5EoE/i3PmdJGH/ipcGiKgMs7WNf+i1100KrBSWtoPfXM8r5yx2Rjc+ONbtu3kia51JEBKhzAj3RonFwEFA9+B/I23jCoLmoaYLUhOV7OV933Z7rapPdFVbbdigJhbEXqPj1RRomBXUvyWj7XKBb4aN09pj0tDoW9XDgMeQCpx+0Ybg3ElM6ZF6SPkoyaZbzWD81JWOAhscO4fsmcnjqYVmBE7J5nVtnuheTtLTQa+qJMMBuGSBGFcQ00qEWSQWpXWqqfJ3WILiEOq6hIwFurzIq9oVVXVbWloLjOp3UtA5xJcXCssbJhs0Oq26qbqYknH6SiNshm0WYZtOYtBhpUupn0FPqvfIlP6TzVNPxEzpTOmQQ0Bmj8wemT3+tVbReo++m8/Rce2tqT+QXw/2uGFXCD7+dNVp3NTlhV1VmGJn67Lmfw+kccRlSseh8ugYFtdEk5znNwRATExh9plTAAAAAElFTkSuQmCC"
-        /></a>
+      <a
+        href="https://www.linkedin.com/in/jaskaran-singh-138503318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAnJJREFUaEPtmM9rE0EUx9+btKseFMHgoenaTqyZFAJFBS8VvfoXeFTIyYNHiRcvXnPzIijYs9deexR7kCLiRXdTySbmhwr1IIhI4s6TCUa3ZWbLSrK7DbvH3Xk7H77zfW/eDMIRfPAIMkMGHdeqzZ7Sbre5RpJdBkanAKh/zMIX/Cz/HJeipnmMSjvd5k0AvLEvkIBI+o9Xl1ZeJwmuhd7tty75ku7qwJDo+/Dbj3uVSmWQFLgW2ul6dwDgigmKETwp2fxVuqB73n0gECYoYvR8daG4lSro913vNgJcNycCPRKLxbepgm58aRflUD7QehqhLQr8YVLAal5j9Xj3sXmNIdwCRDYGRIQOyLmnwrZ7qYRWUG887/SJebwIUp5EoE/i3PmdJGH/ipcGiKgMs7WNf+i1100KrBSWtoPfXM8r5yx2Rjc+ONbtu3kia51JEBKhzAj3RonFwEFA9+B/I23jCoLmoaYLUhOV7OV933Z7rapPdFVbbdigJhbEXqPj1RRomBXUvyWj7XKBb4aN09pj0tDoW9XDgMeQCpx+0Ybg3ElM6ZF6SPkoyaZbzWD81JWOAhscO4fsmcnjqYVmBE7J5nVtnuheTtLTQa+qJMMBuGSBGFcQ00qEWSQWpXWqqfJ3WILiEOq6hIwFurzIq9oVVXVbWloLjOp3UtA5xJcXCssbJhs0Oq26qbqYknH6SiNshm0WYZtOYtBhpUupn0FPqvfIlP6TzVNPxEzpTOmQQ0Bmj8wemT3+tVbReo++m8/Rce2tqT+QXw/2uGFXCD7+dNVp3NTlhV1VmGJn67Lmfw+kccRlSseh8ugYFtdEk5znNwRATExh9plTAAAAAElFTkSuQmCC" /></a>
 
-        <a href="https://www.geeksforgeeks.org/user/bjazzy4u6b/"
-          ><img
-            src="assets/images/SimpleIconsGeeksforgeeks (3).png"
-            width="100%"
-            alt="gfg"
-        /></a>
+      <a href="https://www.geeksforgeeks.org/user/bjazzy4u6b/"><img src="assets/images/SimpleIconsGeeksforgeeks (3).png"
+          width="100%" alt="gfg" /></a>
 
-        <a href="bjazzy8765@gmail.com"
-          ><img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAeRJREFUaEPtmd1NwzAQgO8SCAzQJyqEIiHSHTpEd4AdMkSH6A5lBrpDgpAiBOWpDNDS2sgBCyet3fonCZHcZ9v35fP5nF4QevjDHjKDh25r17xpb1phQJoeeVGMaARJW/bqcc4gWN0ObxaH4u9B5x/5AHfRPUEYdQXM4wYUVzRcT5OrZCWy7EE/vxXpfwD+A4fs7jqeKqGz92LWteF6fAw2qWi7YrrM43NIxe0hSAddPwR+wTSJ44xzKKFDxKcd0E+gMGkNHGFexhJiakEDwnw0jOdtHE7x0GXLYmINzR6cgVMajRux/iuH76YzaL6gS+uykmYFHVDIaLiZ1eukE+s1uyopejkNAMwGCeiC5Xb9MJpYl9lla78sX8dbSh72Sp5O9RAns0pCcP1oZV3DbuUyMYVmi5haN7HrDJovpGXd0K5z6FOtHzrEqtyVXWDaB/HYTSizfmieycFl6ziHPmadw8sqwzEpjUGrct3UbiM5LTMkVhgbu61C82AlvKPX2kZy+pS8tBnjoW3s6cz1pnVs2Yz1pm3s6cxVm2b/A0lUaYzoLN7UWGXfgwXtZYfp513hInV1m9nYP7mXx4Iw8JBelh3TLZBOOky4gVzsKlXeRWxMdDXXf75oy7w37U0rDPQyPb4BsVvHPTuYf7EAAAAASUVORK5CYII="
-        /></a>
+      <a href="bjazzy8765@gmail.com"><img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAAAeRJREFUaEPtmd1NwzAQgO8SCAzQJyqEIiHSHTpEd4AdMkSH6A5lBrpDgpAiBOWpDNDS2sgBCyet3fonCZHcZ9v35fP5nF4QevjDHjKDh25r17xpb1phQJoeeVGMaARJW/bqcc4gWN0ObxaH4u9B5x/5AHfRPUEYdQXM4wYUVzRcT5OrZCWy7EE/vxXpfwD+A4fs7jqeKqGz92LWteF6fAw2qWi7YrrM43NIxe0hSAddPwR+wTSJ44xzKKFDxKcd0E+gMGkNHGFexhJiakEDwnw0jOdtHE7x0GXLYmINzR6cgVMajRux/iuH76YzaL6gS+uykmYFHVDIaLiZ1eukE+s1uyopejkNAMwGCeiC5Xb9MJpYl9lla78sX8dbSh72Sp5O9RAns0pCcP1oZV3DbuUyMYVmi5haN7HrDJovpGXd0K5z6FOtHzrEqtyVXWDaB/HYTSizfmieycFl6ziHPmadw8sqwzEpjUGrct3UbiM5LTMkVhgbu61C82AlvKPX2kZy+pS8tBnjoW3s6cz1pnVs2Yz1pm3s6cxVm2b/A0lUaYzoLN7UWGXfgwXtZYfp513hInV1m9nYP7mXx4Iw8JBelh3TLZBOOky4gVzsKlXeRWxMdDXXf75oy7w37U0rDPQyPb4BsVvHPTuYf7EAAAAASUVORK5CYII=" /></a>
 
-        <nav class="navbar" data-navbar>
-          <ul class="navbar-list">
-            <li>
-              <a href="#home" class="navbar-link" data-nav-link>Home</a>
-            </li>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
 
-            <li>
-              <a href="#about" class="navbar-link" data-nav-link>About</a>
-            </li>
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
 
-            <li>
-              <a href="#education" class="navbar-link" data-nav-link
-                >Education</a
-              >
-            </li>
+          <li>
+            <a href="#education" class="navbar-link" data-nav-link>Education</a>
+          </li>
 
-            <li>
-              <a href="#project" class="navbar-link" data-nav-link>Project</a>
-            </li>
+          <li>
+            <a href="#project" class="navbar-link" data-nav-link>Project</a>
+          </li>
 
-            <li>
-              <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
-            </li>
+          <li>
+            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
+          </li>
 
-            <li>
-              <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-            </li>
-          </ul>
-        </nav>
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-        <button
-          class="nav-open-btn btn:hover"
-          aria-label="open menu"
-          data-nav-toggler
-        >
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-        </button>
+      <button class="nav-open-btn btn:hover" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+      </button>
 
-        <div class="overlay" data-overlay data-nav-toggler></div>
-      </div>
-    </header>
+      <div class="overlay" data-overlay data-nav-toggler></div>
+    </div>
+  </header>
 
-    <main>
-      <article>
-        <!-- 
+  <main>
+    <article>
+      <!-- 
         - #HERO
       -->
 
-        <div class="hero text-center" id="home">
-          <div class="container">
-            <div class="banner-outline has-after">
-              <div
-                class="hero-banner img-holder has-after"
-                style="--width: 500; --height: 680"
-                data-tilt
-              >
-                <img
-                  src="./assets/images/JASKARAN.jpg"
-                  width="500"
-                  height="680"
-                  alt="Jaskaran"
-                  class="img-cover"
-                />
-              </div>
-
-              <span class="span title">Jaskaran</span>
+      <div class="hero text-center" id="home">
+        <div class="container">
+          <div class="banner-outline has-after">
+            <div class="hero-banner img-holder has-after" style="--width: 500; --height: 680" data-tilt>
+              <img src="./assets/images/JASKARAN.jpg" width="500" height="680" alt="Jaskaran" class="img-cover" />
             </div>
 
-            <div class="hero-content">
-              <h1 class="h1 title">I'm a</h1>
-              <div class="texttt" id="moving">
-                <span class="text sec-text" id="animationss"></span>
-              </div>
-
-              <div class="wrapper">
-                <a href="/resume.pdf" class="btn btn:hover">
-                  <span class="span">Download CV</span>
-
-                  <ion-icon
-                    name="cloud-download-outline"
-                    aria-hidden="true"
-                  ></ion-icon>
-                </a>
-
-                <p class="hero-text"></p>
-              </div>
-            </div>
-
-            <img
-              src="./assets/images/hero-shape-1.png"
-              width="559"
-              height="232"
-              alt="shape"
-              class="shape shape-1"
-            />
-
-            <img
-              src="./assets/images/hero-shape-2.png"
-              width="1358"
-              height="497"
-              alt="shape"
-              class="shape shape-2"
-            />
+            <span class="span title">Jaskaran</span>
           </div>
-        </div>
 
-        <!-- 
+          <div class="hero-content">
+            <h1 class="h1 title">I'm a</h1>
+            <div class="texttt" id="moving">
+              <span class="text sec-text" id="animationss"></span>
+            </div>
+
+            <div class="wrapper">
+              <a href="/CV.pdf" class="btn btn:hover">
+                <span class="span">Download CV</span>
+
+                <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+              </a>
+
+              <p class="hero-text"></p>
+            </div>
+          </div>
+
+          <img src="./assets/images/hero-shape-1.png" width="559" height="232" alt="shape" class="shape shape-1" />
+
+          <img src="./assets/images/hero-shape-2.png" width="1358" height="497" alt="shape" class="shape shape-2" />
+        </div>
+      </div>
+
+      <!-- 
         - #SERVICE
       -->
 
-        <section
-          class="service text-center"
-          aria-label="my services"
-          id="service"
-        >
-          <div class="container">
-            <ul class="service-list">
-              <li class="service-item">
-                <div class="service-card">
-                  <div class="card-icon">
-                    <img
-                      src="./assets/images/service-icon-1.svg"
-                      width="80"
-                      height="80"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </div>
+      <section class="service text-center" aria-label="my services" id="service">
+        <div class="container">
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.svg" width="80" height="80" loading="lazy"
+                    alt="service icon" />
+                </div>
 
-                  <h3 class="card-title">
-                    <a href="#">
-                      Web <br />
-                      Development
-                    </a>
-                  </h3>
+                <h3 class="card-title">
+                  <a href="#">
+                    Web <br />
+                    Development
+                  </a>
+                </h3>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-2.svg" width="80" height="80" loading="lazy"
+                    alt="service icon" />
+                </div>
+
+                <h3 class="card-title">
+                  <a href="#">
+                    Operating <br />
+                    System
+                  </a>
+                </h3>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-3.svg" width="80" height="80" loading="lazy"
+                    alt="service icon" />
+                </div>
+
+                <h3 class="card-title">
+                  <a href="#">
+                    Data Structures <br />
+                    & Algorithms
+                  </a>
+                </h3>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-card">
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-4.svg" width="80" height="80" loading="lazy"
+                    alt="service icon" />
+                </div>
+
+                <h3 class="card-title">
+                  <a href="#">
+                    Web <br />
+                    Designing
+                  </a>
+                </h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 
+      ABOUT
+       -->
+
+      <section class="section about" aria-label="about-me" id="about">
+        <div class="container">
+          <div class="tab-container">
+            <ul class="tab-btn-list">
+              <li class="tab-btn-item">
+                <button class="tab-btn title h3 active" data-tab-btn="about">
+                  <b>ABOUT ME</b>
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content active" data-tab-content="about">
+              <div class="grid-list">
+                <figure class="about-banner img-holder" style="--width: ; --height: " data-tilt>
+                  <img src="./assets/images/skill-banner.jpg" width="570" height="420" loading="lazy" alt="about banner"
+                    class="img-cover" />
+                </figure>
+
+                <div class="about-content">
+                  <h2 class="h4 title section-title">
+                    Software Engineer in the making.
+                  </h2>
+
+                  <p class="section-text">
+                    I’m Jaskaran Singh, a dedicated B.Tech student
+                    specializing in Artificial Intelligence and Machine
+                    Learning at Shri Ramswaroop Memorial College of
+                    Engineering. I have a strong grasp of data structures,
+                    algorithms, and full-stack web development, gained through
+                    academic coursework and hands-on projects. During an
+                    on-campus IBM training program, I enhanced my front-end
+                    development skills in HTML, CSS, and JavaScript, and
+                    successfully built a complete project as part of the
+                    program. I’ve developed and deployed dynamic, secure web
+                    applications using technologies like PHP, MySQL, AJAX, and
+                    jQuery, focusing on responsive design and performance
+                    optimization. With 350+ problems solved on GeeksforGeeks ,
+                    I have refined my problem-solving abilities and
+                    algorithmic thinking. I’m proficient with development
+                    tools such as Git, VS Code, and Jupyter Notebook, and I
+                    continuously seek to apply my skills to build real-world,
+                    impactful solutions.
+                  </p>
+
+                  <ul class="about-list">
+                    <li class="about-item">
+                      <p class="list-title">Name</p>
+
+                      <span class="span title h5">Jaskaran Singh</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Phone Number</p>
+
+                      <span class="span title h5">9696885527</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Email Address</p>
+
+                      <span class="span title h5">bjazzy8765@gmail.com</span>
+                    </li>
+
+                    <li class="about-item">
+                      <p class="list-title">Social Network</p>
+
+                      <div class="social-list" style="display: flex; gap: 10px">
+                        <a href="https://www.linkedin.com/in/jaskaran-singh8765/" class="social-link h6"
+                          title="Linkedin"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAaVJREFUSEvtlkFOwlAQhv95EFiZuOjKolJiKXgFWbh3wQ1csPQAROMNuIEx4hm4g8S4cCuthlQEdMMBBKTPPJOa9yg1kLbBBV1OZubr/G/ezCOs6aM1cfG/wE6vWwHjW7MpezosFHpJqBKo2Bm4FxwwfRgHXZdz+fu44Qq403ePiXAqQ8jjH9Ze4TJRsP3mVsFQlSEM+CzmjLNEwZ1Bt0hg5zKEAw/lnHGVKFgk/5Eb/ATANiN6JP3r1iRznDg4bkBYvljvsfPuaBhnNGQnI2vHGv1VhAIWgTTL1uUAj/F2STdawmYP3Srz6EjpgdS4IWCUpppHXFMak8PmqUlz0U8EwNzLNOTgFNGdqeebPhhc7XoQWgGblICFwKODl2kKQstXzXePFcw4jeblFiBRdXHXUJSMBUxTNCzDsEOPAwCxSV0+6+jgBTI+9926RygpozducJrYzYG+35YhL8PX2ozzigKWVBH2yBXLMvsgce3mO33ebwPWVh0gG6nD7vKmuYKvTNdVJo68W3/3rTQZ/FEpD4tl/GJ9CCyzqBZup1UCo/qureJvCxZxLtObp2EAAAAASUVORK5CYII=" /></a>
+
+                        <a href="https://github.com/hyjass" class="social-link h6" title="Github"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvlVt1N40AQntnkQgHkiRwCS0DcQ64G0kPoIUW4B+gh1HC5GmJAMghyT7kC8JEdNEHjrDe73nWExAN+iuLxfPPNfPOD8EUPfhEutAbOiyLt9NQhB/wGuo8l5JvgD8rV8Gi4iiUSBZz/zfuKDi5JQ6qR+j7nimBBnfImJoAg8P3ycbIm+hXLhO06iL81vt42BeAFZpa47k00QtoGVGwV4Yo6r5kP3AnMoKR72T6A9jeoyqkL3Al891xMhSnXjZ3FMmemALTafu9mvgO8WBZjIBhL5F1U12eDkzmrGbtwCYB9VB/B8EOaxfbxny7pzzBJFmxLP2BasUeYpYNkZmajBuxKMf6HjJ21SbvTj5XyGrDNlsE+C5iVfj44vRECdeCXonrBBlyvi+PTbcpa0L57fszsnjeFVgE7leyoTSx2KHtbYFsQe6ZZAtsRGACIUDclFMOH5dPojfRVTXmeHoxh7cpgPPAeiq4Yu4aQUbrGVJsRxrA0baJrzB8tdlQdv23swMzpJ+/Sn8nE2U6uFoA9lO3Si92a3gHChtKHMWtOmHjXqEVgZ1YLa67vutT/sIsTCYAXhlJqzrPbTC0z1JrGTUeCmeZaO4kjUxQ8aYh6I6VxJE5dgguu0dCSEHBhzQwvjpPMvLNstvY3tsh8Y9d7gVRCQ5ghlvPQHeUSZtOsb7y5TGey4DkDrp62gUMLJnjsmcJpclYDjmjBILDZJvzb3Kkm883AUJDbl4Zv4kUDtx2ZIfvvB/wOhKWILmR9BvkAAAAASUVORK5CYII=" /></a>
+
+                        <a href="#" class="social-link h6" title="Facebook"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAVBJREFUSEvtl1FOwzAMhu0MOt7pEzCxSmjtHcoddodxhx5ih+A2u0PLkAKC7qkXoIwYpSJVmhV1Ex4bFXlN5S//H9txEQ608EBcOB5wtsp8ePN8TifCIEjdeBuK01d5zwnVsQRhMRmNEztuA5xJGdEpND7gOgS+w9xW/rfB2kolaIElZDAsC50jA0+cr0ndGcfYFbfdn4a518YOdgMahXsHR1fBrIatMp/Ii4WCEAB9hVSXJatiQZBORsHcgJf50+yD6LatEvYKfniRiUKI+gdGUVZNJrwIC1td1W6/1oDOQtZy+q58XHvTXE6BYMpWx9uC3UT7cXKZLqWVnIAobi6vF0bVY/4cr0FVdguF8a+VU3+z2ljrNpB/xY2Jg3MQ6IHV+llTXv3adM1bOykWZWK32I0pc6fxdlgWdjD9+Lcddqvxtksl1/7x/ElwKeqK8wlAwUYu8MUxXQAAAABJRU5ErkJggg==" /></a>
+
+                        <a href="https://www.instagram.com/jasss21?igsh=dHNsaTNvNjIzMjdt&utm_source=qr"
+                          class="social-link h6" title="Instagram"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAkdJREFUSEvNVttx2lAQ3b1gkgL4CvEEzSSWajDpwT2Q1KAi1IPpgdQQaohEPCM8jvKFCwBLdzN78RIhXT2QPrB+eOjunt1zzz4QLvTghXDh7QNHf6Mx7EbjJoZcxwmbzvD72ozDJL5TGlyN4LVxxmcU4ZY/taKVN3GWVXZW4CiOPRziXCOZDMUZABmndU8+SLajwS5wP7glOyvw+mkTMKgiCCmFH23p44DMlTCV2WjOQTD4zfXULwZbAv6dbOYZ0VcGvbl2gqYMi+9/JZvbKwDIcLcW8AHizy+T6SJ/tgQs2aLa+zaK6gJhUCT6bs6guse9fqYr8G1Zl4DDP7GJzPvozG0gTCXRaMaiQ4XbDOgZcb/iIB+SzW36CoxKLwDSkPQoaAQ2Ts1BO82sciC4KwbEjkXFYfI4Q0yR9i+JN/XiI4MvEOS1cpIxq/lATRn4BBRhOQRllEpALmviQC8siyW0fop9Fhl2ARYmjO+CA6PkY8C4pZQW+cx6AUu2NnUK7VINxax7AYvTIar7z5NPK6voKq6pF3CVcT6Ah+RxlpL+VmSlF/DFqM6Ly0a3iMsmvl4Zs0Ohkr8znQgY8fcU9PhY29ZyOvT9+nKqaSDSsWwNpKqG+f+qFnzaQI7A9oki02dA711uHKRprBVE0jJtaq9qwZYhYe80506p/PU09mo+LAruOhbzAYqwWo1FvkvM3vldFwG5jrMXgf+GB3D+3Wv1KfRuYaRy2cvP3XOWPQm007JXFFLb1Zbt2u5nb3+h71JOdTYXy/gfYd4LPZNxPLcAAAAASUVORK5CYII=" /></a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  
+      Education
+       ================================================== -->
+      <section class="education" id="education">
+        <h2 class="title h2 active" id="centers"><b>EDUCATION</b></h2>
+        <div class="timeline-items">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018 - 2019</div>
+            <div class="timeline-content">
+              <h3>High School - 92%</h3>
+              <p>Vidyatree Modern World College</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2021</div>
+            <div class="timeline-content">
+              <h3>Intermediate - 90%</h3>
+              <p>Vidyatree Modern World College</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2021 - 2025</div>
+            <div class="timeline-content">
+              <h3>BTech - 8.5 CGPA</h3>
+              <p>
+                Shri Ramswaroop Memorial College of Engineering & Management
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 
+        - #CTA
+      -->
+      <section class="section cta" aria-label="work with me">
+        <div class="container">
+          <h2 class="title h2 section-title text-center">
+            Let's Work Together On Your Next Project!
+          </h2>
+
+          <a href="#" class="btn btn:hover">
+            <span class="span">Hire Me Now</span>
+
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+      </section>
+      <!-- 
+        - #PROJECTS
+      -->
+      <section class="section project" aria-label="my latest projects" id="project">
+        <ul class="slider-list">
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
+                <img src="./assets/images/ml.jpg" width="1000" height="763" loading="lazy"
+                  alt="Project poster: Cloud Migration & AWS Services" class="img-cover" />
+
+                <a href="https://github.com/hyjass/DIGIT-RECOGNIZER-BY-CNN" class="btn btn:hover">
+                  <span class="span">Project Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">ML Project</p>
+
+                <h3 class="title h3">
+                  <a href="https://github.com/hyjass/DIGIT-RECOGNIZER-BY-CNN" class="card-title">Handwritten Digit
+                    Prediction</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
+                <img src="./assets/images/ecommerce.png" width="1000" height="763" loading="lazy"
+                  alt="Project poster: Full Web Development Project With JavaScript" class="img-cover" />
+
+                <a href="https://punjabstylesbyjass.netlify.app/" class="btn btn:hover">
+                  <span class="span">Project Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">Web Development</p>
+
+                <h3 class="title h3">
+                  <a href="https://punjabstylesbyjass.netlify.app/" class="card-title">E-Commerce Website With
+                    JavaScript</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763">
+                <img src="./assets/images/e-commerce.jpg" width="1000" height="763" loading="lazy"
+                  alt="Project poster: Cloud Migration & AWS Services" class="img-cover" />
+
+                <a href="#" class="btn btn:hover">
+                  <span class="span">Project Details</span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+
+              <div class="card-content">
+                <p class="card-subtitle">ML + Web Development</p>
+
+                <h3 class="title h3">
+                  <a href="#" class="card-title">Campus Enquiry Chatbot</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 
+      #SKILLS
+       -->
+
+      <section class="skills" id="skills">
+        <h2 class="title h2 section-title" style="text-align: center">
+          <b>MY SKILLS</b>
+        </h2>
+        <div class="skills-row">
+          <div class="skills-column">
+            <h3 class="title h3 section-title" style="text-align: center">
+              Coding Skills
+            </h3>
+
+            <div class="skills-box">
+              <div class="skills-content">
+                <div class="progress">
+                  <h3>HTML <span>90%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>CSS <span>75%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>JavaScript <span>60%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>SQL <span>70%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>PHP <span>80%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-column">
+            <h3 class="title h3 section-title" style="text-align: center">
+              Technical Skills
+            </h3>
+
+            <div class="skills-box">
+              <div class="skills-content">
+                <div class="progress">
+                  <h3>Web Development <span>70%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>Data Structures & Algorithms <span>75%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>OOPS Concepts <span>70%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>DBMS & OS <span>60%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+
+                <div class="progress">
+                  <h3>Software Engineering<span>60%</span></h3>
+                  <div class="bar"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" aria-label="contact me" id="contact">
+        <div class="container">
+          <h2 class="title h2 section-title">Get In Touch</h2>
+
+          <div class="contact-content">
+            <form action="" method="post" class="contact-form">
+              <input type="text" name="name" placeholder="Full name" autocomplete="off" required class="input-field" />
+
+              <input type="email" name="email_address" placeholder="Email address" autocomplete="off" required
+                class="input-field" />
+
+              <input type="tel" name="phone" placeholder="Phone" autocomplete="off" class="input-field" />
+
+              <textarea name="message" placeholder="Enter messages" required class="input-field"></textarea>
+
+              <button type="submit" class="btn btn:hover">
+                <span class="span">Get A Quote</span>
+
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31095.532143791675!2d80.91971308775439!3d26.91552669775782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20map%20in%20html!5e0!3m2!1sen!2sin!4v1728504436089!5m2!1sen!2sin"
+              width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="item-icon">
+                  <img src="./assets/images/contact-icon-1.png" width="50" height="50" loading="lazy"
+                    alt="contact icon" />
+                </div>
+
+                <div>
+                  <span class="title h6">9696885527</span>
                 </div>
               </li>
 
-              <li class="service-item">
-                <div class="service-card">
-                  <div class="card-icon">
-                    <img
-                      src="./assets/images/service-icon-2.svg"
-                      width="80"
-                      height="80"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </div>
+              <li class="contact-item">
+                <div class="item-icon">
+                  <img src="./assets/images/contact-icon-2.png" width="50" height="50" loading="lazy"
+                    alt="contact icon" />
+                </div>
 
-                  <h3 class="card-title">
-                    <a href="#">
-                      Operating <br />
-                      System
-                    </a>
-                  </h3>
+                <div>
+                  <address class="title h6">
+                    IIM Road, Lucknow, UTTAR PRADESH, INDIA
+                  </address>
                 </div>
               </li>
 
-              <li class="service-item">
-                <div class="service-card">
-                  <div class="card-icon">
-                    <img
-                      src="./assets/images/service-icon-3.svg"
-                      width="80"
-                      height="80"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </div>
-
-                  <h3 class="card-title">
-                    <a href="#">
-                      Data Structures <br />
-                      & Algorithms
-                    </a>
-                  </h3>
+              <li class="contact-item">
+                <div class="item-icon">
+                  <img src="./assets/images/contact-icon-3.png" width="50" height="50" loading="lazy"
+                    alt="contact icon" />
                 </div>
-              </li>
 
-              <li class="service-item">
-                <div class="service-card">
-                  <div class="card-icon">
-                    <img
-                      src="./assets/images/service-icon-4.svg"
-                      width="80"
-                      height="80"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </div>
-
-                  <h3 class="card-title">
-                    <a href="#">
-                      Web <br />
-                      Designing
-                    </a>
-                  </h3>
+                <div>
+                  <span class="title h6">bjazzy8765@gmail.com</span>
                 </div>
               </li>
             </ul>
           </div>
-        </section>
-
-        <!-- 
-      ABOUT
-       -->
-
-        <section class="section about" aria-label="about-me" id="about">
-          <div class="container">
-            <div class="tab-container">
-              <ul class="tab-btn-list">
-                <li class="tab-btn-item">
-                  <button class="tab-btn title h3 active" data-tab-btn="about">
-                    <b>ABOUT ME</b>
-                  </button>
-                </li>
-              </ul>
-
-              <div class="tab-content active" data-tab-content="about">
-                <div class="grid-list">
-                  <figure
-                    class="about-banner img-holder"
-                    style="--width: ; --height: "
-                    data-tilt
-                  >
-                    <img
-                      src="./assets/images/skill-banner.jpg"
-                      width="570"
-                      height="420"
-                      loading="lazy"
-                      alt="about banner"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div class="about-content">
-                    <h2 class="h4 title section-title">
-                      Software Engineer in the making.
-                    </h2>
-
-                    <p class="section-text">
-                      I’m Jaskaran Singh, a dedicated B.Tech student
-                      specializing in Artificial Intelligence and Machine
-                      Learning at Shri Ramswaroop Memorial College of
-                      Engineering. I have a strong grasp of data structures,
-                      algorithms, and full-stack web development, gained through
-                      academic coursework and hands-on projects. During an
-                      on-campus IBM training program, I enhanced my front-end
-                      development skills in HTML, CSS, and JavaScript, and
-                      successfully built a complete project as part of the
-                      program. I’ve developed and deployed dynamic, secure web
-                      applications using technologies like PHP, MySQL, AJAX, and
-                      jQuery, focusing on responsive design and performance
-                      optimization. With 350+ problems solved on GeeksforGeeks ,
-                      I have refined my problem-solving abilities and
-                      algorithmic thinking. I’m proficient with development
-                      tools such as Git, VS Code, and Jupyter Notebook, and I
-                      continuously seek to apply my skills to build real-world,
-                      impactful solutions.
-                    </p>
-
-                    <ul class="about-list">
-                      <li class="about-item">
-                        <p class="list-title">Name</p>
-
-                        <span class="span title h5">Jaskaran Singh</span>
-                      </li>
-
-                      <li class="about-item">
-                        <p class="list-title">Phone Number</p>
-
-                        <span class="span title h5">9696885527</span>
-                      </li>
-
-                      <li class="about-item">
-                        <p class="list-title">Email Address</p>
-
-                        <span class="span title h5">bjazzy8765@gmail.com</span>
-                      </li>
-
-                      <li class="about-item">
-                        <p class="list-title">Social Network</p>
-
-                        <div
-                          class="social-list"
-                          style="display: flex; gap: 10px"
-                        >
-                          <a
-                            href="https://www.linkedin.com/in/jaskaran-singh8765/"
-                            class="social-link h6"
-                            title="Linkedin"
-                            ><img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAaVJREFUSEvtlkFOwlAQhv95EFiZuOjKolJiKXgFWbh3wQ1csPQAROMNuIEx4hm4g8S4cCuthlQEdMMBBKTPPJOa9yg1kLbBBV1OZubr/G/ezCOs6aM1cfG/wE6vWwHjW7MpezosFHpJqBKo2Bm4FxwwfRgHXZdz+fu44Qq403ePiXAqQ8jjH9Ze4TJRsP3mVsFQlSEM+CzmjLNEwZ1Bt0hg5zKEAw/lnHGVKFgk/5Eb/ATANiN6JP3r1iRznDg4bkBYvljvsfPuaBhnNGQnI2vHGv1VhAIWgTTL1uUAj/F2STdawmYP3Srz6EjpgdS4IWCUpppHXFMak8PmqUlz0U8EwNzLNOTgFNGdqeebPhhc7XoQWgGblICFwKODl2kKQstXzXePFcw4jeblFiBRdXHXUJSMBUxTNCzDsEOPAwCxSV0+6+jgBTI+9926RygpozducJrYzYG+35YhL8PX2ozzigKWVBH2yBXLMvsgce3mO33ebwPWVh0gG6nD7vKmuYKvTNdVJo68W3/3rTQZ/FEpD4tl/GJ9CCyzqBZup1UCo/qureJvCxZxLtObp2EAAAAASUVORK5CYII="
-                          /></a>
-
-                          <a
-                            href="https://github.com/hyjass"
-                            class="social-link h6"
-                            title="Github"
-                            ><img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvlVt1N40AQntnkQgHkiRwCS0DcQ64G0kPoIUW4B+gh1HC5GmJAMghyT7kC8JEdNEHjrDe73nWExAN+iuLxfPPNfPOD8EUPfhEutAbOiyLt9NQhB/wGuo8l5JvgD8rV8Gi4iiUSBZz/zfuKDi5JQ6qR+j7nimBBnfImJoAg8P3ycbIm+hXLhO06iL81vt42BeAFZpa47k00QtoGVGwV4Yo6r5kP3AnMoKR72T6A9jeoyqkL3Al891xMhSnXjZ3FMmemALTafu9mvgO8WBZjIBhL5F1U12eDkzmrGbtwCYB9VB/B8EOaxfbxny7pzzBJFmxLP2BasUeYpYNkZmajBuxKMf6HjJ21SbvTj5XyGrDNlsE+C5iVfj44vRECdeCXonrBBlyvi+PTbcpa0L57fszsnjeFVgE7leyoTSx2KHtbYFsQe6ZZAtsRGACIUDclFMOH5dPojfRVTXmeHoxh7cpgPPAeiq4Yu4aQUbrGVJsRxrA0baJrzB8tdlQdv23swMzpJ+/Sn8nE2U6uFoA9lO3Si92a3gHChtKHMWtOmHjXqEVgZ1YLa67vutT/sIsTCYAXhlJqzrPbTC0z1JrGTUeCmeZaO4kjUxQ8aYh6I6VxJE5dgguu0dCSEHBhzQwvjpPMvLNstvY3tsh8Y9d7gVRCQ5ghlvPQHeUSZtOsb7y5TGey4DkDrp62gUMLJnjsmcJpclYDjmjBILDZJvzb3Kkm883AUJDbl4Zv4kUDtx2ZIfvvB/wOhKWILmR9BvkAAAAASUVORK5CYII="
-                          /></a>
-
-                          <a href="#" class="social-link h6" title="Facebook"
-                            ><img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAVBJREFUSEvtl1FOwzAMhu0MOt7pEzCxSmjtHcoddodxhx5ih+A2u0PLkAKC7qkXoIwYpSJVmhV1Ex4bFXlN5S//H9txEQ608EBcOB5wtsp8ePN8TifCIEjdeBuK01d5zwnVsQRhMRmNEztuA5xJGdEpND7gOgS+w9xW/rfB2kolaIElZDAsC50jA0+cr0ndGcfYFbfdn4a518YOdgMahXsHR1fBrIatMp/Ii4WCEAB9hVSXJatiQZBORsHcgJf50+yD6LatEvYKfniRiUKI+gdGUVZNJrwIC1td1W6/1oDOQtZy+q58XHvTXE6BYMpWx9uC3UT7cXKZLqWVnIAobi6vF0bVY/4cr0FVdguF8a+VU3+z2ljrNpB/xY2Jg3MQ6IHV+llTXv3adM1bOykWZWK32I0pc6fxdlgWdjD9+Lcddqvxtksl1/7x/ElwKeqK8wlAwUYu8MUxXQAAAABJRU5ErkJggg=="
-                          /></a>
-
-                          <a
-                            href="https://www.instagram.com/jasss21?igsh=dHNsaTNvNjIzMjdt&utm_source=qr"
-                            class="social-link h6"
-                            title="Instagram"
-                            ><img
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAkdJREFUSEvNVttx2lAQ3b1gkgL4CvEEzSSWajDpwT2Q1KAi1IPpgdQQaohEPCM8jvKFCwBLdzN78RIhXT2QPrB+eOjunt1zzz4QLvTghXDh7QNHf6Mx7EbjJoZcxwmbzvD72ozDJL5TGlyN4LVxxmcU4ZY/taKVN3GWVXZW4CiOPRziXCOZDMUZABmndU8+SLajwS5wP7glOyvw+mkTMKgiCCmFH23p44DMlTCV2WjOQTD4zfXULwZbAv6dbOYZ0VcGvbl2gqYMi+9/JZvbKwDIcLcW8AHizy+T6SJ/tgQs2aLa+zaK6gJhUCT6bs6guse9fqYr8G1Zl4DDP7GJzPvozG0gTCXRaMaiQ4XbDOgZcb/iIB+SzW36CoxKLwDSkPQoaAQ2Ts1BO82sciC4KwbEjkXFYfI4Q0yR9i+JN/XiI4MvEOS1cpIxq/lATRn4BBRhOQRllEpALmviQC8siyW0fop9Fhl2ARYmjO+CA6PkY8C4pZQW+cx6AUu2NnUK7VINxax7AYvTIar7z5NPK6voKq6pF3CVcT6Ah+RxlpL+VmSlF/DFqM6Ly0a3iMsmvl4Zs0Ohkr8znQgY8fcU9PhY29ZyOvT9+nKqaSDSsWwNpKqG+f+qFnzaQI7A9oki02dA711uHKRprBVE0jJtaq9qwZYhYe80506p/PU09mo+LAruOhbzAYqwWo1FvkvM3vldFwG5jrMXgf+GB3D+3Wv1KfRuYaRy2cvP3XOWPQm007JXFFLb1Zbt2u5nb3+h71JOdTYXy/gfYd4LPZNxPLcAAAAASUVORK5CYII="
-                          /></a>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!--  
-      Education
-       ================================================== -->
-
-        <section class="education" id="education">
-          <h2 class="title h2 active" id="centers"><b>EDUCATION</b></h2>
-
-          <div class="timeline-items">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2018 - 2019</div>
-              <div class="timeline-content">
-                <h3>High School - 92%</h3>
-                <p>Vidyatree Modern World College</p>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2020 - 2021</div>
-              <div class="timeline-content">
-                <h3>Intermediate - 90%</h3>
-                <p>Vidyatree Modern World College</p>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2021 - 2025</div>
-              <div class="timeline-content">
-                <h3>BTech - 8.5 CGPA</h3>
-                <p>
-                  Shri Ramswaroop Memorial College of Engineering & Management
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 
-        - #CTA
-      -->
-
-        <section class="section cta" aria-label="work with me">
-          <div class="container">
-            <h2 class="title h2 section-title text-center">
-              Let's Work Together On Your Next Project!
-            </h2>
-
-            <a href="#" class="btn btn:hover">
-              <span class="span">Hire Me Now</span>
-
-              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-            </a>
-          </div>
-        </section>
-
-        <!-- 
-        - #PROJECTS
-      -->
-
-        <section
-          class="section project"
-          aria-label="my latest projects"
-          id="project"
-        >
-          <ul class="slider-list">
-            <li class="slider-item">
-              <div class="project-card text-center">
-                <div
-                  class="card-banner img-holder has-before"
-                  style="--width: 1000; --height: 763"
-                >
-                  <img
-                    src="./assets/images/ml.jpg"
-                    width="1000"
-                    height="763"
-                    loading="lazy"
-                    alt="Project poster: Cloud Migration & AWS Services"
-                    class="img-cover"
-                  />
-
-                  <a
-                    href="https://github.com/hyjass/DIGIT-RECOGNIZER-BY-CNN"
-                    class="btn btn:hover"
-                  >
-                    <span class="span">Project Details</span>
-
-                    <ion-icon
-                      name="arrow-forward"
-                      aria-hidden="true"
-                    ></ion-icon>
-                  </a>
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle">ML Project</p>
-
-                  <h3 class="title h3">
-                    <a
-                      href="https://github.com/hyjass/DIGIT-RECOGNIZER-BY-CNN"
-                      class="card-title"
-                      >Handwritten Digit Prediction</a
-                    >
-                  </h3>
-                </div>
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="project-card text-center">
-                <div
-                  class="card-banner img-holder has-before"
-                  style="--width: 1000; --height: 763"
-                >
-                  <img
-                    src="./assets/images/ecommerce.png"
-                    width="1000"
-                    height="763"
-                    loading="lazy"
-                    alt="Project poster: Full Web Development Project With JavaScript"
-                    class="img-cover"
-                  />
-
-                  <a
-                    href="https://punjabstylesbyjass.netlify.app/"
-                    class="btn btn:hover"
-                  >
-                    <span class="span">Project Details</span>
-
-                    <ion-icon
-                      name="arrow-forward"
-                      aria-hidden="true"
-                    ></ion-icon>
-                  </a>
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle">Web Development</p>
-
-                  <h3 class="title h3">
-                    <a
-                      href="https://punjabstylesbyjass.netlify.app/"
-                      class="card-title"
-                      >E-Commerce Website With JavaScript</a
-                    >
-                  </h3>
-                </div>
-              </div>
-            </li>
-
-            <li class="slider-item">
-              <div class="project-card text-center">
-                <div
-                  class="card-banner img-holder has-before"
-                  style="--width: 1000; --height: 763"
-                >
-                  <img
-                    src="./assets/images/e-commerce.jpg"
-                    width="1000"
-                    height="763"
-                    loading="lazy"
-                    alt="Project poster: Cloud Migration & AWS Services"
-                    class="img-cover"
-                  />
-
-                  <a href="#" class="btn btn:hover">
-                    <span class="span">Project Details</span>
-
-                    <ion-icon
-                      name="arrow-forward"
-                      aria-hidden="true"
-                    ></ion-icon>
-                  </a>
-                </div>
-
-                <div class="card-content">
-                  <p class="card-subtitle">ML + Web Development</p>
-
-                  <h3 class="title h3">
-                    <a href="#" class="card-title">Campus Enquiry Chatbot</a>
-                  </h3>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- 
-      #SKILLS
-       -->
-
-        <section class="skills" id="skills">
-          <h2 class="title h2 section-title" style="text-align: center">
-            <b>MY SKILLS</b>
-          </h2>
-          <div class="skills-row">
-            <div class="skills-column">
-              <h3 class="title h3 section-title" style="text-align: center">
-                Coding Skills
-              </h3>
-
-              <div class="skills-box">
-                <div class="skills-content">
-                  <div class="progress">
-                    <h3>HTML <span>90%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>CSS <span>75%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>JavaScript <span>60%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>SQL <span>70%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>PHP <span>80%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="skills-column">
-              <h3 class="title h3 section-title" style="text-align: center">
-                Technical Skills
-              </h3>
-
-              <div class="skills-box">
-                <div class="skills-content">
-                  <div class="progress">
-                    <h3>Web Development <span>70%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>Data Structures & Algorithms <span>75%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>OOPS Concepts <span>70%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>DBMS & OS <span>60%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-
-                  <div class="progress">
-                    <h3>Software Engineering<span>60%</span></h3>
-                    <div class="bar"><span></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 
-        - #CONTACT
-      -->
-
-        <section class="section contact" aria-label="contact me" id="contact">
-          <div class="container">
-            <h2 class="title h2 section-title">Get In Touch</h2>
-
-            <div class="contact-content">
-              <form action="" method="post" class="contact-form">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full name"
-                  autocomplete="off"
-                  required
-                  class="input-field"
-                />
-
-                <input
-                  type="email"
-                  name="email_address"
-                  placeholder="Email address"
-                  autocomplete="off"
-                  required
-                  class="input-field"
-                />
-
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone"
-                  autocomplete="off"
-                  class="input-field"
-                />
-
-                <textarea
-                  name="message"
-                  placeholder="Enter messages"
-                  required
-                  class="input-field"
-                ></textarea>
-
-                <button type="submit" class="btn btn:hover">
-                  <span class="span">Get A Quote</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-              </form>
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31095.532143791675!2d80.91971308775439!3d26.91552669775782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20map%20in%20html!5e0!3m2!1sen!2sin!4v1728504436089!5m2!1sen!2sin"
-                width="600"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                class="map"
-              ></iframe>
-
-              <ul class="contact-list">
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-1.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <span class="title h6">9696885527</span>
-                  </div>
-                </li>
-
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-2.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <address class="title h6">
-                      IIM Road, Lucknow, UTTAR PRADESH, INDIA
-                    </address>
-                  </div>
-                </li>
-
-                <li class="contact-item">
-                  <div class="item-icon">
-                    <img
-                      src="./assets/images/contact-icon-3.png"
-                      width="50"
-                      height="50"
-                      loading="lazy"
-                      alt="contact icon"
-                    />
-                  </div>
-
-                  <div>
-                    <span class="title h6">bjazzy8765@gmail.com</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </article>
-    </main>
-
-    <!-- 
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- 
     - #FOOTER
   -->
 
-    <footer class="footer">
-      <div class="container">
-        <p class="copyright">Copyright & Design By @jass</p>
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">Copyright & Design By @jass</p>
 
-        <a href="#top" class="back-top-btn">
-          <span class="span">Back To Top</span>
+      <a href="#top" class="back-top-btn">
+        <span class="span">Back To Top</span>
 
-          <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
-        </a>
-      </div>
-    </footer>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+      </a>
+    </div>
+  </footer>
 
-    <!-- 
+  <!-- 
     - #CUSTOM CURSOR
   -->
 
-    <div class="cursor-dot" data-cursor></div>
-    <div class="cursor-outline" data-cursor></div>
+  <div class="cursor-dot" data-cursor></div>
+  <div class="cursor-outline" data-cursor></div>
 
-    <!-- 
+  <!-- 
     - custom js link
   -->
 
-    <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
-    <!-- 
+  <!-- 
     - ionicon link
   -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+
 </html>

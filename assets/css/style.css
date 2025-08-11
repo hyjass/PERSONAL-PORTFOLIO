@@ -1358,7 +1358,11 @@ textarea.input-field {
   .cursor-dot.hovered {
     transform: translate(-50%, -50%) scale(1);
     mix-blend-mode: exclusion;
-  }
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+}
 
   .cursor-outline {
     width: 30px;
